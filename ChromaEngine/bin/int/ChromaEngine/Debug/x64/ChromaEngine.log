@@ -1,0 +1,4 @@
+﻿  ChromaEngineApp.cpp
+E:\Projects\OpenGL\ChromaEngine\ChromaEngine\ChromaEngine\Source\Core\ChromaEngineApp.cpp(11,6): warning C4101:  'l': unreferenced local variable
+     Creating library E:\Projects\OpenGL\ChromaEngine\ChromaEngine\bin\ChromaEngine\Debug\x64\ChromaEngine.lib and object E:\Projects\OpenGL\ChromaEngine\ChromaEngine\bin\ChromaEngine\Debug\x64\ChromaEngine.exp
+  ChromaEngine.vcxproj -> E:\Projects\OpenGL\ChromaEngine\ChromaEngine\bin\ChromaEngine\Debug\x64\ChromaEngine.dll
