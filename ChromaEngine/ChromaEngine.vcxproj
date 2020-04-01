@@ -155,6 +155,9 @@
   <ItemGroup>
     <ClCompile Include="Source\ChromaEngine.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header\Interfaces\Runnable.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
