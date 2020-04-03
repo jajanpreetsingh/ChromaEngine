@@ -1,20 +1,25 @@
 #include "Core/ChromaEngineApp.h"
 #include <iostream>
 #include "Logging/Log.h"
+#include "Core/MSWindow.h"
 
-ChromaEngineApp::ChromaEngineApp()
+namespace Chroma
 {
-}
+	ChromaEngineApp::ChromaEngineApp()
+	{
+	}
 
-void ChromaEngineApp::Run()
-{
-	Log l;
-	//l.LogInfo("***************Info******************");
-	//l.LogWarning("***************Warning******************");
-	//l.LogError("***************Error******************");
-	std::cout << "Initiating Chroma Engine !!!\n";
-}
+	void ChromaEngineApp::Run()
+	{
+		std::cout << "Initiating Chroma Engine v7 !!!\n";
 
-ChromaEngineApp::~ChromaEngineApp()
-{
+		WindowProps wp(1280,720,"Title");
+
+
+		win = std::make_unique<MSWindow>(Window::Create(wp));
+	}
+
+	ChromaEngineApp::~ChromaEngineApp()
+	{
+	}
 }

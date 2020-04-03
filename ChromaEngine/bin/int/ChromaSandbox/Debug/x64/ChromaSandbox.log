@@ -1,2 +1,1 @@
-﻿  ChromaSandbox.cpp
-  ChromaSandbox.vcxproj -> E:\Projects\OpenGL\ChromaEngine\ChromaEngine\bin\ChromaSandbox\Debug\x64\ChromaSandbox.exe
+﻿LINK : fatal error LNK1104: cannot open file 'E:\Projects\OpenGL\ChromaEngine\ChromaEngine\bin\ChromaEngine\Debug\x64\ChromaEngine.lib'

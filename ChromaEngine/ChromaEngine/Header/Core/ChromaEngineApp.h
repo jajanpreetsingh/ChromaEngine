@@ -2,13 +2,19 @@
 
 #include "Contract/Runnable.h"
 #include "APIMacros.h"
+#include "MSWindow.h"
 
-class CHROMA_API ChromaEngineApp : public Runnable
+namespace Chroma
 {
-public:
-	ChromaEngineApp();
+	class CHROMA_API ChromaEngineApp : public Runnable
+	{
+	public:
+		ChromaEngineApp();
 
-	void Run() override;
+		void Run() override;
 
-	~ChromaEngineApp();
-};
+		~ChromaEngineApp();
+
+		std::unique_ptr<MSWindow> win;
+	};
+}

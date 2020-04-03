@@ -1,8 +1,8 @@
 #include <iostream>
-#include "Core\ChromaEngineApp.h"
+#include "Core\SandboxApp.h"
 
 int main()
 {
-	ChromaEngineApp app;
+	SandboxApp app;
 	app.Run();
 }

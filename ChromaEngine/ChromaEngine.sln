@@ -7,6 +7,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChromaSandbox", "ChromaSand
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChromaEngine", "ChromaEngine\ChromaEngine.vcxproj", "{FA9280D8-5D0E-4EB3-98C5-541AEE857898}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5432AAA9-535F-4604-90D5-0416ED217669}"
+	ProjectSection(SolutionItems) = preProject
+		Premake5.lua = Premake5.lua
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

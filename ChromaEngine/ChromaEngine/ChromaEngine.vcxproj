@@ -19,13 +19,51 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Header\Event\MouseEvent\MouseCode.h" />
     <ClCompile Include="Source\Core\ChromaEngineApp.cpp" />
+    <ClCompile Include="Source\Core\MSWindow.cpp" />
+    <ClCompile Include="Source\Event\ApplicationEvent\AppRenderEvent.cpp" />
+    <ClCompile Include="Source\Event\ApplicationEvent\AppTickEvent.cpp" />
+    <ClCompile Include="Source\Event\ApplicationEvent\AppUpdateEvent.cpp" />
+    <ClCompile Include="Source\Event\ApplicationEvent\WindowCloseEvent.cpp" />
+    <ClCompile Include="Source\Event\ApplicationEvent\WindowResizeEvent.cpp" />
+    <ClCompile Include="Source\Event\Event.cpp" />
+    <ClCompile Include="Source\Event\EventDispatcher.cpp" />
+    <ClCompile Include="Source\Event\KeyEvent\KeyEvent.cpp" />
+    <ClCompile Include="Source\Event\KeyEvent\KeyPressedEvent.cpp" />
+    <ClCompile Include="Source\Event\KeyEvent\KeyReleasedEvent.cpp" />
+    <ClCompile Include="Source\Event\KeyEvent\KeyTypedEvent.cpp" />
+    <ClCompile Include="Source\Event\MouseEvent\MouseButtonEvent.cpp" />
+    <ClCompile Include="Source\Event\MouseEvent\MouseButtonPressedEvent.cpp" />
+    <ClCompile Include="Source\Event\MouseEvent\MouseButtonReleasedEvent.cpp" />
+    <ClCompile Include="Source\Event\MouseEvent\MouseMoveEvent.cpp" />
+    <ClCompile Include="Source\Event\MouseEvent\MouseScrollEvent.cpp" />
     <ClCompile Include="Source\Logging\Log.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\Contract\Runnable.h" />
+    <ClInclude Include="Header\Contract\Window.h" />
     <ClInclude Include="Header\Core\APIMacros.h" />
     <ClInclude Include="Header\Core\ChromaEngineApp.h" />
+    <ClInclude Include="Header\Core\MSWindow.h" />
+    <ClInclude Include="Header\Event\ApplicationEvent\AppRenderEvent.h" />
+    <ClInclude Include="Header\Event\ApplicationEvent\AppTickEvent.h" />
+    <ClInclude Include="Header\Event\ApplicationEvent\AppUpdateEvent.h" />
+    <ClInclude Include="Header\Event\ApplicationEvent\WindowCloseEvent.h" />
+    <ClInclude Include="Header\Event\ApplicationEvent\WindowResizeEvent.h" />
+    <ClInclude Include="Header\Event\Event.h" />
+    <ClInclude Include="Header\Event\EventDispatcher.h" />
+    <ClInclude Include="Header\Event\EventTypes.h" />
+    <ClInclude Include="Header\Event\KeyEvent\KeyCode.h" />
+    <ClInclude Include="Header\Event\KeyEvent\KeyEvent.h" />
+    <ClInclude Include="Header\Event\KeyEvent\KeyPressedEvent.h" />
+    <ClInclude Include="Header\Event\KeyEvent\KeyReleasedEvent.h" />
+    <ClInclude Include="Header\Event\KeyEvent\KeyTypedEvent.h" />
+    <ClInclude Include="Header\Event\MouseEvent\MouseButtonEvent.h" />
+    <ClInclude Include="Header\Event\MouseEvent\MouseButtonPressedEvent.h" />
+    <ClInclude Include="Header\Event\MouseEvent\MouseButtonReleasedEvent.h" />
+    <ClInclude Include="Header\Event\MouseEvent\MouseMoveEvent.h" />
+    <ClInclude Include="Header\Event\MouseEvent\MouseScrollEvent.h" />
     <ClInclude Include="Header\Logging\Log.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -107,13 +145,15 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CHROMA_DLL;CHROMA_WIN</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CHROMA_DLL;CHROMA_WIN;CHROMA_DEBUG</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)$(ProjectName)\Header\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -123,13 +163,15 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CHROMA_DLL;CHROMA_WIN</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CHROMA_DLL;CHROMA_WIN;CHROMA_DEBUG</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)$(ProjectName)\Header\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -141,7 +183,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CHROMA_DLL;CHROMA_WIN</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CHROMA_DLL;CHROMA_WIN;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)$(ProjectName)\Header\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -150,6 +192,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -161,7 +205,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CHROMA_DLL;CHROMA_WIN</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CHROMA_DLL;CHROMA_WIN;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)$(ProjectName)\Header\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -170,6 +214,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

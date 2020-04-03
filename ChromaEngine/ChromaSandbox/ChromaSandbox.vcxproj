@@ -74,21 +74,25 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)bin\int\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+    <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)bin\int\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+    <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)bin\int\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+    <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(ProjectName)\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)bin\int\$(ProjectName)\$(Configuration)\$(Platform)\</IntDir>
+    <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -107,6 +111,12 @@
       <AdditionalLibraryDirectories>$(SolutionDir)bin\ChromaEngine\$(Configuration)\$(Platform)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy /y $(SolutionDir)bin\ChromaEngine\$(Configuration)\$(Platform)\ChromaEngine.dll $(SolutionDir)bin\ChromaSandbox\$(Configuration)\$(Platform)\ChromaEngine.dll </Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copies engine dll to sandbox bin</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -125,6 +135,12 @@
       <AdditionalLibraryDirectories>$(SolutionDir)bin\ChromaEngine\$(Configuration)\$(Platform)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy /y $(SolutionDir)bin\ChromaEngine\$(Configuration)\$(Platform)\ChromaEngine.dll $(SolutionDir)bin\ChromaSandbox\$(Configuration)\$(Platform)\ChromaEngine.dll </Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copies engine dll to sandbox bin</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -147,6 +163,12 @@
       <AdditionalLibraryDirectories>$(SolutionDir)bin\ChromaEngine\$(Configuration)\$(Platform)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy /y $(SolutionDir)bin\ChromaEngine\$(Configuration)\$(Platform)\ChromaEngine.dll $(SolutionDir)bin\ChromaSandbox\$(Configuration)\$(Platform)\ChromaEngine.dll </Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copies engine dll to sandbox bin</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -169,14 +191,24 @@
       <AdditionalLibraryDirectories>$(SolutionDir)bin\ChromaEngine\$(Configuration)\$(Platform)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copy /y $(SolutionDir)bin\ChromaEngine\$(Configuration)\$(Platform)\ChromaEngine.dll $(SolutionDir)bin\ChromaSandbox\$(Configuration)\$(Platform)\ChromaEngine.dll </Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copies engine dll to sandbox bin</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\ChromaSandbox.cpp" />
+    <ClCompile Include="Source\Core\SandboxApp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ChromaEngine\ChromaEngine.vcxproj">
       <Project>{fa9280d8-5d0e-4eb3-98c5-541aee857898}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header\Core\SandboxApp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
