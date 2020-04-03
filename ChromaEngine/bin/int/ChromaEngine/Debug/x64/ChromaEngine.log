@@ -1,24 +1,24 @@
-﻿  ChromaEngineApp.cpp
-E:\Projects\OpenGL\ChromaEngine\ChromaEngine\ChromaEngine\Header\Core\ChromaEngineApp.h(18,32): warning C4251:  'Chroma::ChromaEngineApp::win': class 'std::unique_ptr<MSWindow,std::default_delete<_Ty>>' needs to have dll-interface to be used by clients of class 'Chroma::ChromaEngineApp'
-E:\Projects\OpenGL\ChromaEngine\ChromaEngine\ChromaEngine\Header\Core\ChromaEngineApp.h(18,32): warning C4251:         with
-E:\Projects\OpenGL\ChromaEngine\ChromaEngine\ChromaEngine\Header\Core\ChromaEngineApp.h(18,32): warning C4251:         [
-E:\Projects\OpenGL\ChromaEngine\ChromaEngine\ChromaEngine\Header\Core\ChromaEngineApp.h(18,32): warning C4251:             _Ty=MSWindow
-E:\Projects\OpenGL\ChromaEngine\ChromaEngine\ChromaEngine\Header\Core\ChromaEngineApp.h(18,32): warning C4251:         ]
-E:\Projects\OpenGL\ChromaEngine\ChromaEngine\ChromaEngine\Header\Core\ChromaEngineApp.h(18): message :  see declaration of 'std::unique_ptr<MSWindow,std::default_delete<_Ty>>'
-E:\Projects\OpenGL\ChromaEngine\ChromaEngine\ChromaEngine\Header\Core\ChromaEngineApp.h(18): message :         with
-E:\Projects\OpenGL\ChromaEngine\ChromaEngine\ChromaEngine\Header\Core\ChromaEngineApp.h(18): message :         [
-E:\Projects\OpenGL\ChromaEngine\ChromaEngine\ChromaEngine\Header\Core\ChromaEngineApp.h(18): message :             _Ty=MSWindow
-E:\Projects\OpenGL\ChromaEngine\ChromaEngine\ChromaEngine\Header\Core\ChromaEngineApp.h(18): message :         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\memory(2066,35): error C2664:  'MSWindow::MSWindow(const MSWindow &)': cannot convert argument 1 from '_Ty' to 'WindowProps'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\memory(2066,35): error C2664:         with
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\memory(2066,35): error C2664:         [
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\memory(2066,35): error C2664:             _Ty=Window *
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\memory(2066,35): error C2664:         ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.22.27905\include\memory(2065,1): message :  No constructor could take the source type, or constructor overload resolution was ambiguous
+﻿  MouseCode.h
+  ChromaEngineApp.cpp
+  MSWindow.cpp
+  AppRenderEvent.cpp
+  AppTickEvent.cpp
+  AppUpdateEvent.cpp
+  WindowCloseEvent.cpp
+  WindowResizeEvent.cpp
+  Event.cpp
+  EventDispatcher.cpp
+  KeyEvent.cpp
+  KeyPressedEvent.cpp
+  KeyReleasedEvent.cpp
+  KeyTypedEvent.cpp
+  MouseButtonEvent.cpp
+  MouseButtonPressedEvent.cpp
+  MouseButtonReleasedEvent.cpp
+  MouseMoveEvent.cpp
+  MouseScrollEvent.cpp
   Log.cpp
   Generating Code...
-E:\Projects\OpenGL\ChromaEngine\ChromaEngine\ChromaEngine\Source\Core\ChromaEngineApp.cpp(19): message :  see reference to function template instantiation 'std::unique_ptr<MSWindow,std::default_delete<_Ty>> std::make_unique<MSWindow,Window*,0>(Window *&&)' being compiled
-E:\Projects\OpenGL\ChromaEngine\ChromaEngine\ChromaEngine\Source\Core\ChromaEngineApp.cpp(19): message :         with
-E:\Projects\OpenGL\ChromaEngine\ChromaEngine\ChromaEngine\Source\Core\ChromaEngineApp.cpp(19): message :         [
-E:\Projects\OpenGL\ChromaEngine\ChromaEngine\ChromaEngine\Source\Core\ChromaEngineApp.cpp(19): message :             _Ty=MSWindow
-E:\Projects\OpenGL\ChromaEngine\ChromaEngine\ChromaEngine\Source\Core\ChromaEngineApp.cpp(19): message :         ]
+     Creating library E:\Projects\OpenGL\ChromaEngine\ChromaEngine\bin\ChromaEngine\Debug\x64\ChromaEngine.lib and object E:\Projects\OpenGL\ChromaEngine\ChromaEngine\bin\ChromaEngine\Debug\x64\ChromaEngine.exp
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  ChromaEngine.vcxproj -> E:\Projects\OpenGL\ChromaEngine\ChromaEngine\bin\ChromaEngine\Debug\x64\ChromaEngine.dll

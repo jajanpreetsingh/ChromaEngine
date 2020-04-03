@@ -11,14 +11,14 @@ struct WindowProps
 	unsigned int Width;
 	unsigned int Height;
 	bool VSync;
-	//EventCallbackFn callback;
+	EventCallbackFn callback;
 
 	WindowProps(
 		unsigned int width,
 		unsigned int height, 
-		std::string title,
+		const std::string& title = "ChromaEngine",
 		bool vsync = false)
-		: Title(title), Width(width), Height(height), VSync(vsync)
+		: Width(width), Height(height), Title(title), VSync(vsync)
 	{
 	}
 };
@@ -42,5 +42,5 @@ public:
 
 	virtual void* GetNativeWindow() const = 0;
 
-	static Window* Create(WindowProps props);
+	static Window* Create(const WindowProps& props);
 };

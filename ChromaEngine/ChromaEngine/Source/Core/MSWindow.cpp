@@ -4,7 +4,7 @@
 
 bool MSWindow::glfwInitialized = false;
 
-MSWindow::MSWindow(WindowProps props) : props(props)
+MSWindow::MSWindow(const WindowProps& props) : props(props)
 {
 	Init();
 }
@@ -32,7 +32,7 @@ inline unsigned int MSWindow::GetHeight() const
 
 inline void MSWindow::SetEventCallback(const EventCallbackFn& callback)
 {
-	//props.callback = callback;
+	props.callback = callback;
 }
 
 void MSWindow::SetVSync(bool enabled)
@@ -54,7 +54,7 @@ void MSWindow::Init()
 		int success = glfwInit();
 
 		CHROMA_ASSERT(success, "Failed to init glfw");
-		CHROMA_ASSERT(!success, "success to init glfw");
+		CHROMA_INFO("success to init glfw");
 
 		glfwInitialized = true;
 	}
@@ -70,7 +70,7 @@ void MSWindow::Shutdown()
 	glfwDestroyWindow(glWindow);
 }
 
-Window* Window::Create(WindowProps props)
+Window* Window::Create(const WindowProps& props)
 {
 	return new MSWindow(props);
 }

@@ -13,10 +13,14 @@ namespace Chroma
 	{
 		std::cout << "Initiating Chroma Engine v7 !!!\n";
 
-		WindowProps wp(1280,720,"Title");
+		WindowProps wp((unsigned int)1280, (unsigned int)720,"Title");
 
+		win = Window::Create(wp);
 
-		win = std::make_unique<MSWindow>(Window::Create(wp));
+		while (true)
+		{
+			win->OnUpdate();
+		}
 	}
 
 	ChromaEngineApp::~ChromaEngineApp()

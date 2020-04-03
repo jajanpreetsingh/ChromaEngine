@@ -9,7 +9,7 @@ class MSWindow : public Window
 public:
 
 	static bool glfwInitialized;
-	MSWindow(WindowProps props);
+	MSWindow(const WindowProps& props);
 
 	virtual ~MSWindow();
 
