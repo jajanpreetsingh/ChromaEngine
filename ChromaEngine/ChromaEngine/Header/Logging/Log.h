@@ -10,10 +10,6 @@ namespace Chroma
 #define INFO_COLOR 0x000B
 #define WARNING_COLOR 0x000E
 
-#define CHROMA_INFO(x)     Chroma::Log::LogInfo(x)
-#define CHROMA_WARN(x)     Chroma::Log::LogWarning(x)
-#define CHROMA_ERROR(x)    Chroma::Log::LogError(x)
-
 	//0 = Black       8 = Gray
 	//1 = Blue        9 = Light Blue
 	//2 = Green       A = Light Green

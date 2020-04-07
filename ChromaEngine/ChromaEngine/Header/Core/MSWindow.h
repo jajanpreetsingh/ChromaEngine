@@ -18,7 +18,7 @@ public:
 	inline unsigned int GetWidth() const override;
 	inline unsigned int GetHeight() const override;
 
-	inline void SetEventCallback(const EventCallbackFn& callback) override;
+	void SetEventCallback(const EventCallbackFn& callback) override;
 
 	void SetVSync(bool enabled) override;
 	bool IsVSync() const override;
@@ -28,6 +28,14 @@ public:
 private:
 	virtual void Init();
 	virtual void Shutdown();
+
+	void OnResize(GLFWwindow* target, int newWidth, int newHeight);
+	
+	void OnClose(GLFWwindow* target);
+	
+	void OnKeyEvent(GLFWwindow* target, int key, int scanCode, int action, int mods);
+
+	void OnMouseButtonEvent(GLFWwindow* target, int button, int action, int mods);
 
 	GLFWwindow* glWindow;
 	//GraphicsContext* graphicsContext;

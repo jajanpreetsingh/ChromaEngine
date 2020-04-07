@@ -1,6 +1,5 @@
-﻿  ChromaSandbox.cpp
-  SandboxApp.cpp
-  Generating Code...
-  ChromaSandbox.vcxproj -> E:\Projects\OpenGL\ChromaEngine\ChromaEngine\bin\ChromaSandbox\Debug\x64\ChromaSandbox.exe
+﻿  ChromaSandbox.vcxproj -> E:\Projects\OpenGL\ChromaEngine\ChromaEngine\bin\ChromaSandbox\Debug\x64\ChromaSandbox.exe
   Copies engine dll to sandbox bin
-          1 file(s) copied.
+  The system cannot find the file specified.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(138,5): error MSB3073: The command "copy /y E:\Projects\OpenGL\ChromaEngine\ChromaEngine\bin\ChromaEngine\Debug\x64\ChromaEngine.dll E:\Projects\OpenGL\ChromaEngine\ChromaEngine\bin\ChromaSandbox\Debug\x64\ChromaEngine.dll 
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(138,5): error MSB3073: :VCEnd" exited with code 1.
