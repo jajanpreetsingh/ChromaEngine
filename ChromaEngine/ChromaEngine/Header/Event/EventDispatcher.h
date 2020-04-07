@@ -1,16 +1,18 @@
 #pragma once
 
-#include "Event.h"
+#include <Event/Event.h>
+#include <functional>
 
 class EventDispatcher
 {
+	template<typename T>
+	using EventHandlerFn = std::function<bool(T&)>;
 public:
 
 	EventDispatcher(Event& event);
 
-	// F will be deduced by the compiler
-	template<typename T, typename F>
-	bool Dispatch(const F& func);
+	template<typename T>
+	bool Dispatch(const EventHandlerFn<T>& func);
 
 private:
 

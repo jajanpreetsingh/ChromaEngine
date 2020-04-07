@@ -4,6 +4,7 @@
 #include "Core/MSWindow.h"
 #include <Event/EventDispatcher.h>
 #include <functional>
+#define HZ_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
 
 namespace Chroma
 {
@@ -19,7 +20,7 @@ namespace Chroma
 
 		win = std::unique_ptr<Window>(Window::Create(wp));
 
-		win->SetEventCallback(std::bind(&ChromaEngineApp::OnEvent, this, std::placeholders::_1));
+		win->SetEventCallback(HZ_BIND_EVENT_FN(ChromaEngineApp::OnEvent));
 
 		while (true)
 		{
@@ -30,8 +31,8 @@ namespace Chroma
 	void ChromaEngineApp::OnEvent(Event& e)
 	{
 		EventDispatcher dispatcher(e);
-		dispatcher.Dispatch<WindowCloseEvent>(std::bind(&ChromaEngineApp::OnWindowClose, this, std::placeholders::_1));
-		dispatcher.Dispatch<WindowResizeEvent>(std::bind(&ChromaEngineApp::OnWindowResize, this, std::placeholders::_1));
+		//dispatcher.Dispatch<WindowCloseEvent>(HZ_BIND_EVENT_FN(ChromaEngineApp::OnWindowClose));
+		//dispatcher.Dispatch<WindowResizeEvent>(HZ_BIND_EVENT_FN(ChromaEngineApp::OnWindowResize));
 	}
 
 	bool ChromaEngineApp::OnWindowClose(WindowCloseEvent& e)
