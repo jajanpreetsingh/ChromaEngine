@@ -24,6 +24,6 @@ namespace Chroma
 
 		~ChromaEngineApp();
 
-		std::unique_ptr<MSWindow> win;
+		std::unique_ptr<Window> win;
 	};
 }

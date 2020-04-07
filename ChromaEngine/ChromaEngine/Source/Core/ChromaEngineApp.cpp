@@ -15,11 +15,11 @@ namespace Chroma
 	{
 		std::cout << "Initiating Chroma Engine v7 !!!\n";
 
-		WindowProps wp((unsigned int)1280, (unsigned int)720,"Title");
+		WindowProps wp((unsigned int)1280, (unsigned int)720, "Title");
 
-		win = std::unique_ptr<MSWindow>((MSWindow*)Window::Create(wp));
+		win = std::unique_ptr<Window>(Window::Create(wp));
 
-		win->SetEventCallback(std::bind(&OnEvent, this, std::placeholders::_1));
+		win->SetEventCallback(std::bind(&ChromaEngineApp::OnEvent, this, std::placeholders::_1));
 
 		while (true)
 		{
@@ -30,9 +30,8 @@ namespace Chroma
 	void ChromaEngineApp::OnEvent(Event& e)
 	{
 		EventDispatcher dispatcher(e);
-		dispatcher.Dispatch<WindowCloseEvent>(std::bind(&OnWindowClose, std::placeholders::_1));
-		dispatcher.Dispatch<WindowResizeEvent>(std::bind(&OnWindowResize, std::placeholders::_1));
-
+		dispatcher.Dispatch<WindowCloseEvent>(std::bind(&ChromaEngineApp::OnWindowClose, this, std::placeholders::_1));
+		dispatcher.Dispatch<WindowResizeEvent>(std::bind(&ChromaEngineApp::OnWindowResize, this, std::placeholders::_1));
 	}
 
 	bool ChromaEngineApp::OnWindowClose(WindowCloseEvent& e)
